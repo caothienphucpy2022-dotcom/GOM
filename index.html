@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Comet Survival — Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="top">
+        <h1>Comet Survival</h1>
+        <div class="hud">
+          <div id="level">Level: 1</div>
+          <div id="time">Time: 0.00</div>
+          <div id="score">Score: 0</div>
+        </div>
+      </header>
+
+      <main>
+        <canvas id="game"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="menu">
+            <h2>Comet Survival</h2>
+            <p>
+              Tránh thiên thạch vàng, chọn nhân vật và level để điều khiển số
+              thiên thạch.
+            </p>
+            <div class="menu-section">
+              <h3>Trang phục</h3>
+              <div class="skin-list">
+                <button
+                  class="skin-button selected"
+                  data-skin="0"
+                  aria-label="Skin 1"
+                  style="background-position: 0 0"
+                ></button>
+                <button
+                  class="skin-button"
+                  data-skin="1"
+                  aria-label="Skin 2"
+                  style="background-position: -100% 0"
+                ></button>
+                <button
+                  class="skin-button"
+                  data-skin="2"
+                  aria-label="Skin 3"
+                  style="background-position: -200% 0"
+                ></button>
+                <button
+                  class="skin-button"
+                  data-skin="3"
+                  aria-label="Skin 4"
+                  style="background-position: -300% 0"
+                ></button>
+              </div>
+            </div>
+            <div class="menu-section">
+              <h3>Level</h3>
+              <div class="level-list">
+                <button class="level-button selected" data-level="1">
+                  Lv 1<br /><span>2 quả</span>
+                </button>
+                <button class="level-button" data-level="2">
+                  Lv 2<br /><span>4 quả</span>
+                </button>
+                <button class="level-button" data-level="3">
+                  Lv 3<br /><span>6 quả</span>
+                </button>
+              </div>
+            </div>
+            <div class="menu-section history-section">
+              <h3>Lịch sử chơi</h3>
+              <ul id="historyList" class="history-list">
+                <li>Chưa có lịch sử</li>
+              </ul>
+            </div>
+            <button id="btnStart">Bắt đầu</button>
+          </div>
+        </div>
+        <div id="gameover" class="overlay hidden">
+          <div class="menu">
+            <h2>Game Over</h2>
+            <p id="goText">
+              Bạn đã thu <span id="finalGold">0</span> vàng<br />Thời gian:
+              <span id="finalTime">0.00</span>s
+            </p>
+            <div class="actions">
+              <button id="btnReplay">Chơi lại</button>
+              <button id="btnHome">Về trang chủ</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">A/D move • Space jump</footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
